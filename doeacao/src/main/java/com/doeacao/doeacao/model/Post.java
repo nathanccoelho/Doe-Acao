@@ -36,7 +36,7 @@ public class Post {
 	@Size (min=5, max =5000, message = "O atributo pic deve conter no mínimo 5 e no máximo 5000 catacteres!")
 	private String pic;
 	
-	@Size (min=2, max =5000, message = "O atributo comment deve conter no mínimo 2 e no máximo 5000 catacteres!")
+	@Size (min=2, max =5001, message = "O atributo comment deve conter no mínimo 2 e no máximo 5000 catacteres!")
 	private String comment;
 	
 	
