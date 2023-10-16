@@ -54,6 +54,7 @@ public class UserController {
 				.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
+	
 	@PostMapping("/register")
 	public ResponseEntity<User> postUser(@RequestBody @Valid User user) {
 
@@ -64,7 +65,7 @@ public class UserController {
 	}
 
 	@PutMapping("/update")
-	public ResponseEntity<User> putUser(@Valid @RequestBody User user) {
+	public ResponseEntity<User> putUser(@Valid @RequestBody User user) {	
 		
 		return userService.updateUser(user)
 			.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))

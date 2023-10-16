@@ -58,7 +58,7 @@ private List<GrantedAuthority> authorities;
 
 	@Override
 	public boolean isEnabled() {
-		return false;
+		return true;
 	}
 	
 }
