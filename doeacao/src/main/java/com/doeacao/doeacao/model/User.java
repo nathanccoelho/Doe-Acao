@@ -3,11 +3,19 @@ package com.doeacao.doeacao.model;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
 import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -46,11 +54,13 @@ public class User {
 	
 	@NotNull
 	private LocalDate birthDate;
-
+	
+	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("user")
 	private List<Post> post;
 	
+
 	//Getters and Setters;
 	public Long getId() {
 		return id;
@@ -72,12 +82,12 @@ public class User {
 	}
 
 
-	public String getUser() {
+	public String getEmail() {
 		return user;
 	}
 
 
-	public void setUser(String email) {
+	public void setEmail(String email) {
 		this.user = email;
 	}
 
@@ -136,7 +146,13 @@ public class User {
 		return post;
 	}
 
+
 	public void setPost(List<Post> post) {
 		this.post = post;
 	}
+	
+	
+	
+	
+
 }
