@@ -1,10 +1,19 @@
 package com.doeacao.doeacao.model;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import java.util.List;
+
+
+import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -38,7 +47,6 @@ public class User {
 	@Email
 	private String user;
 	
-	
 	@CPF
 	private String cpf;
 	
@@ -54,11 +62,11 @@ public class User {
 	
 	@NotNull
 	private LocalDate birthDate;
-	
-	
+
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("user")
 	private List<Post> post;
+
 	
 
 	//Getters and Setters;
@@ -86,11 +94,9 @@ public class User {
 		return user;
 	}
 
-
-	public void setEmail(String email) {
-		this.user = email;
+	public void setUser(String user) {
+		this.user = user;
 	}
-
 
 	public String getCpf() {
 		return cpf;
@@ -141,7 +147,6 @@ public class User {
 		this.birthDate = birthDate;
 	}
 
-
 	public List<Post> getPost() {
 		return post;
 	}
@@ -150,9 +155,5 @@ public class User {
 	public void setPost(List<Post> post) {
 		this.post = post;
 	}
-	
-	
-	
-	
 
 }
