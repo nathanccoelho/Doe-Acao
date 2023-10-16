@@ -1,15 +1,13 @@
 package com.doeacao.doeacao.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -17,7 +15,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "tb_user")
-public class Usuario {
+public class User {
 	
 	
 	@Id
@@ -30,7 +28,7 @@ public class Usuario {
 	
 	@NotBlank (message = "O atributo email é obrigatório!")
 	@Email
-	private String email;
+	private String user;
 	
 	
 	@CPF
@@ -49,7 +47,9 @@ public class Usuario {
 	@NotNull
 	private LocalDate birthDate;
 
-
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("user")
+	private List<Post> post;
 	
 	//Getters and Setters;
 	public Long getId() {
@@ -72,13 +72,13 @@ public class Usuario {
 	}
 
 
-	public String getEmail() {
-		return email;
+	public String getUser() {
+		return user;
 	}
 
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUser(String email) {
+		this.user = email;
 	}
 
 
@@ -130,9 +130,13 @@ public class Usuario {
 	public void setBirthDate(LocalDate birthDate) {
 		this.birthDate = birthDate;
 	}
-	
-	
-	
-	
 
+
+	public List<Post> getPost() {
+		return post;
+	}
+
+	public void setPost(List<Post> post) {
+		this.post = post;
+	}
 }
