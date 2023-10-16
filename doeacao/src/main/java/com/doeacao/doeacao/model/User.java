@@ -76,10 +76,9 @@ public class User {
 	}
 
 
-	public void setEmail(String user) {
+	public void setUser(String user) {
 		this.user = user;
 	}
-
 
 	public String getCpf() {
 		return cpf;
