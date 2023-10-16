@@ -17,7 +17,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "tb_user")
-public class Usuario {
+public class User {
 	
 	
 	@Id
@@ -30,7 +30,7 @@ public class Usuario {
 	
 	@NotBlank (message = "O atributo email é obrigatório!")
 	@Email
-	private String email;
+	private String user;
 	
 	@CPF
 	private String cpf;
@@ -71,13 +71,13 @@ public class Usuario {
 	}
 
 
-	public String getEmail() {
-		return email;
+	public String getUser() {
+		return user;
 	}
 
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String user) {
+		this.user = user;
 	}
 
 
