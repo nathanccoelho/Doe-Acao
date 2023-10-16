@@ -1,5 +1,7 @@
 package com.doeacao.doeacao.model;
 
+import java.time.LocalDate;
+
 public class UserLogin {
 
     private Long id;
@@ -7,6 +9,7 @@ public class UserLogin {
     private String user;
     private String password;
     private String pic;
+    private LocalDate birthDate;
     private String token;
 
     public Long getId() {
@@ -56,4 +59,12 @@ public class UserLogin {
     public void setToken(String token) {
         this.token = token;
     }
+
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
+	}
 }
