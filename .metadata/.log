@@ -1421,6 +1421,7 @@ END
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-10-09 12:45:52.718
 !MESSAGE Started org.springframework.tooling.boot.ls LS process 4904
+<<<<<<< HEAD
 !SESSION 2023-10-16 09:28:46.036 -----------------------------------------------
 eclipse.buildId=4.19.1.202308011926
 java.version=17.0.7
@@ -2078,3 +2079,5 @@ END
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-10-16 17:02:36.773
 !MESSAGE Started org.springframework.tooling.boot.ls LS process 14936
+=======
+>>>>>>> 2603f99b9434647499ab902d69af95e38f89a870
