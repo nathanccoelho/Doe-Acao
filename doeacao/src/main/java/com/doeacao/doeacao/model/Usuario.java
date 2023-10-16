@@ -32,7 +32,6 @@ public class Usuario {
 	@Email
 	private String email;
 	
-	
 	@CPF
 	private String cpf;
 	
