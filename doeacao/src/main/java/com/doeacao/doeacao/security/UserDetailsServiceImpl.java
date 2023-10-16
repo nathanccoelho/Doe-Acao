@@ -10,7 +10,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.doeacao.doeacao.model.User;
 import com.doeacao.doeacao.repository.ThemeRepository;
+import com.doeacao.doeacao.repository.UserRepository;
 
 
 @Service
@@ -18,7 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	
 	
 	@Autowired
-	private ThemeRepository themeRepository;
+	private UserRepository userRepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {

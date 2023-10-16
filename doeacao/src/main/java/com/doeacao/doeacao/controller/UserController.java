@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.doeacao.doeacao.model.User;
+import com.doeacao.doeacao.model.UserLogin;
 import com.doeacao.doeacao.repository.UserRepository;
+import com.doeacao.doeacao.service.UserService;
 
 import jakarta.validation.Valid;
 
@@ -46,25 +48,25 @@ public class UserController {
 	}
 	
 	@PostMapping("/login")
-	public ResponseEntity<UserLogin> autenticarUser(@RequestBody Optional<UserLogin> usuarioLogin){
+	public ResponseEntity<UserLogin> autenticarUser(@RequestBody Optional<UserLogin> userLogin){
 		
-		return userService.autenticarUser(userLogin)
+		return userService.authenticateUser(userLogin)
 				.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
-	@PostMapping("/cadastrar")
+	@PostMapping("/register")
 	public ResponseEntity<User> postUser(@RequestBody @Valid User user) {
 
-		return userService.cadastrarUser(user)
+		return userService.registerUser(user)
 			.map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
 
 	}
 
-	@PutMapping("/atualizar")
+	@PutMapping("/update")
 	public ResponseEntity<User> putUser(@Valid @RequestBody User user) {
 		
-		return userService.atualizarUser(user)
+		return userService.updateUser(user)
 			.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 		
