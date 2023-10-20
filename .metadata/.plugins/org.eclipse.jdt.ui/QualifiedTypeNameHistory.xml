@@ -16,10 +16,21 @@
     <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
     <fullyQualifiedTypeName name="jakarta.validation.constraints.NotBlank"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="jakarta.validation.constraints.Email"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.constraints.br.CPF"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.constraints.br.CNPJ"/>
     <fullyQualifiedTypeName name="jakarta.validation.constraints.NotNull"/>
     <fullyQualifiedTypeName name="jakarta.validation.constraints.Size"/>
+    <fullyQualifiedTypeName name="com.doeacao.doeacao.security.JwtService"/>
+    <fullyQualifiedTypeName name="com.doeacao.doeacao.model.User"/>
+    <fullyQualifiedTypeName name="com.doeacao.doeacao.repository.UserRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetailsService"/>
+    <fullyQualifiedTypeName name="org.springframework.security.crypto.password.PasswordEncoder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.authentication.AuthenticationProvider"/>
+    <fullyQualifiedTypeName name="org.springframework.security.authentication.dao.DaoAuthenticationProvider"/>
+    <fullyQualifiedTypeName name="com.doeacao.doeacao.service.UserService"/>
+    <fullyQualifiedTypeName name="com.doeacao.doeacao.model.UserLogin"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
 </qualifiedTypeNameHistroy>
