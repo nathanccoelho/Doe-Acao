@@ -17,6 +17,8 @@ import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -43,6 +45,7 @@ public class User {
 	@Size (min=2, max =255, message = "O atributo name deve conter no mínimo 2 e no máximo 255 catacteres!")
 	private String name;
 	
+	@Schema(example = "email@email.com.br")
 	@NotBlank (message = "O atributo email é obrigatório!")
 	@Email
 	private String user;
