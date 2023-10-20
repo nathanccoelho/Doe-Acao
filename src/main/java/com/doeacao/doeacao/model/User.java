@@ -12,20 +12,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.util.List;
 
-
-import jakarta.persistence.*;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -43,10 +34,10 @@ public class User {
 	@NotBlank (message = "O atributo name é obrigatório!")
 	@Size (min=2, max =255, message = "O atributo name deve conter no mínimo 2 e no máximo 255 catacteres!")
 	private String name;
-	
+
 	@Schema(example = "email@email.com.br")
-	@NotBlank (message = "O atributo email é obrigatório!")
-	@Email
+	@NotNull(message = "O Atributo Usuário é Obrigatório!")
+	@Email(message = "O Atributo Usuário deve ser um email válido!")
 	private String user;
 	
 	@CPF
