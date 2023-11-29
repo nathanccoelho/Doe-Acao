@@ -9,10 +9,8 @@ A ideia da rede social é conectar pessoas que queira doar dinheiro para ONGS qu
 - Conexão com o MySQL para testes remoto.
 - Conexão com o PostgreSQL para o Deploy.
 
-### Status: Projeto não finalizado pois não foi possivel fazer o deploy com os atributos em inglês.
-
 # Membros:
 
-#Eduardo Nogueira #Matheus Sousa #Maylis Maria #Nathan Coelho
+#Eduardo Nogueira #Eliza Reis #Matheus Sousa #Maylis Maria 
 
-#Ricardo Galvão
+#Nathan Coelho #Ricardo Galvão
