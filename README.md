@@ -13,6 +13,6 @@ A ideia da rede social é conectar pessoas que queira doar dinheiro para ONGS qu
 
 # Membros:
 
-#Eduardo Nogueira #Matheus Sousa #Maylis Maria #Nathan Coelho GitHub
+#Eduardo Nogueira #Matheus Sousa #Maylis Maria #Nathan Coelho
 
 #Ricardo Galvão
